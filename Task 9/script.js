@@ -20,6 +20,11 @@ class Movie {
 
 const baubas = new Movie("Baubas", "Ilja Bereznickas", 3347);
 console.table(baubas);
+// if (baubas.wasExpensive()) {
+//   console.log("was espensive");
+// } else {
+//   console.log("was not expesive");
+// }
 console.log(baubas.wasExpensive());
 
 const godFather = new Movie("The Godfather", "Francis Ford Coppola", 6000000);
