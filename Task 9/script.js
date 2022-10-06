@@ -12,9 +12,9 @@ class Movie {
     this.title = title;
     this.director = director;
     this.budget = Number(budget);
-    this.wasExpensive = function () {
-      return this.budget >= 100000000;
-    };
+  }
+  wasExpensive() {
+    return this.budget >= 100000000;
   }
 }
 
