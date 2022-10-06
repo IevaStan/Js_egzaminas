@@ -42,7 +42,7 @@ document.querySelector("body").innerText = `Movie "${
   baubas.title
 }" was created by ${
   baubas.director
-} and its ${baubas.wasExpensive()}, that its budget was expensive. The budget was $${
+} and it's ${baubas.wasExpensive()}, that its budget was expensive. The budget was $${
   baubas.budget
 }.`;
 
@@ -50,6 +50,6 @@ document.querySelector("body").innerHTML += `<br> Movie "${
   godFather.title
 }" was created by ${
   godFather.director
-} and its ${baubas.wasExpensive()}, that its budget was expensive. The budget was $${
+} and it's ${baubas.wasExpensive()}, that its budget was expensive. The budget was $${
   godFather.budget
 }.`;
