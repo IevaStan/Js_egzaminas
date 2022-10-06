@@ -19,14 +19,37 @@ class Movie {
 }
 
 const baubas = new Movie("Baubas", "Ilja Bereznickas", 3347);
-console.table(baubas);
-// if (baubas.wasExpensive()) {
-//   console.log("was espensive");
-// } else {
-//   console.log("was not expesive");
-// }
-console.log(baubas.wasExpensive());
-
 const godFather = new Movie("The Godfather", "Francis Ford Coppola", 6000000);
+
+// ------------------------
+// TEKSTAS Į CONSOLE:
+// ------------------------
+
+console.table(baubas);
+if (baubas.wasExpensive()) {
+  console.log("was espensive");
+} else {
+  console.log("was not expesive");
+}
 console.table(godFather);
 console.log(godFather.wasExpensive());
+
+// ------------------------
+// TEKSTAS Į HTML:
+// ------------------------
+
+document.querySelector("body").innerText = `Movie "${
+  baubas.title
+}" was created by ${
+  baubas.director
+} and its ${baubas.wasExpensive()}, that its budget was expensive. The budget was $${
+  baubas.budget
+}.`;
+
+document.querySelector("body").innerHTML += `<br> Movie "${
+  godFather.title
+}" was created by ${
+  godFather.director
+} and its ${baubas.wasExpensive()}, that its budget was expensive. The budget was $${
+  godFather.budget
+}.`;

@@ -21,26 +21,32 @@ const users = [
 ];
 console.table(users);
 
-function filterDogOwers() {
-  document.querySelector("body").innerHTML +=
-    "Šunis turi šie vartotojai:" + "<br>";
-  for (let i = 0; i < users.length; i++) {
-    // users[i].hasDog && console.log(users[i].name);
-    if (users[i].hasDog) {
-      document.querySelector("body").innerHTML += users[i].name + "<br>";
-    }
-  }
+let dogOwners = users.filter(filterDogs);
+function filterDogs(users) {
+  return users.hasDog;
 }
-filterDogOwers();
+console.table(dogOwners);
 
-document.querySelector("body").innerHTML +=
-  "<br>" + "Pilnamečiai yra šie vartotojai:" + "<br>";
 let adultUsers = users.filter(filterAdults);
 function filterAdults(users) {
   return users.age >= 18;
 }
 console.table(adultUsers);
 
+// ------------------------
+// TEKSTAS Į HTML
+// ------------------------
+
+document.querySelector("body").innerHTML +=
+  "Šunis turi šie vartotojai:" + "<br>" + "<br>";
+for (let i = 0; i < dogOwners.length; i++) {
+  document.querySelector("body").innerHTML +=
+    i + 1 + ". " + dogOwners[i].name + "<br>";
+}
+
+document.querySelector("body").innerHTML +=
+  "<br>" + "Pilnamečiai yra šie vartotojai:" + "<br>" + "<br>";
 for (let i = 0; i < adultUsers.length; i++) {
-  document.querySelector("body").innerHTML += adultUsers[i].name + "<br>";
+  document.querySelector("body").innerHTML +=
+    i + 1 + ". " + adultUsers[i].name + "<br>";
 }

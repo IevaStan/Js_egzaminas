@@ -23,7 +23,7 @@ const makeRequest = () => {
 };
 
 const showResults = (responseItems) => {
-//   console.log(responseItems);
+  // console.table(responseItems);
   const output = document.getElementById("output");
   output.innerHTML = "";
   responseItems.forEach((item) => {

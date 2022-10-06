@@ -2,8 +2,6 @@
 Sutvarkykite užduoties "Task 10" esančius failus taip, kad veiktų žemiau pateiktos funcijos
 -------------------------------------------------------------------------------------------- */
 
-// "use strict";
-
 import composition from "./modules/math/composition.js";
 import division from "./modules/math/division.js";
 import substraction from "./modules/math/subtraction.js";
@@ -19,3 +17,5 @@ console.log(a);
 console.log(b);
 console.log(c);
 console.log(d);
+
+document.querySelector("body").innerText = `Pateiktų skaičių suma lygi ${a}, dalmuo lygus ${b}, skirtumas lygus ${c}, o sandauga lygi ${d}.`

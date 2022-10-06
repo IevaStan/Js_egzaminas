@@ -12,11 +12,13 @@ bent minimalų stilių;
 const ENDPOINT = "cars.json";
 
 const output = document.getElementById("output");
-function getCars() {
-  return fetch(ENDPOINT).then((response) => response.json());
+async function getCars() {
+  const response = await fetch(ENDPOINT);
+  return await response.json();
 }
 
 getCars().then((data) => {
+  console.table(data);
   data.forEach((car) => {
     const carCard = document.createElement("div");
     carCard.className = "card";

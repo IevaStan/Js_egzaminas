@@ -10,8 +10,9 @@ function countFunction(event) {
   event.preventDefault();
   count++;
   document.getElementById("btn__state").innerHTML = count;
-//   console.log(count)
+  // console.log(count); 
 }
+
 
 document
   .getElementById("btn__element")

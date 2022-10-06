@@ -7,29 +7,29 @@ division() - priima du skaičius ir grąžina jų dalybos rezultatą;
 ------------------------------------------------------------------------------------ */
 
 function Calculator(a, b) {
-    function sum(a, b) {
-      console.log("skaičių suma lygi " + (a + b));
-      return a + b;
-    }
-    sum(a, b);
-  
-    function subtraction(a, b) {
-      console.log("skaičių skirtumas lygus " + (a - b));
-      return a - b;
-    }
-    subtraction(a, b);
-  
-    function multiplication(a, b) {
-      console.log("skaičių sandauga lygi " + a * b);
-      return a * b;
-    }
-    multiplication(a, b);
-  
-    function division(a, b) {
-      console.log("skaičių dalyba lygi " + a / b);
-      return a / b;
-    }
-    division(a, b);
-  }
-  Calculator(10, 2);
-  
+  this.sum = function () {
+    console.log(`Pateiktų skaičių suma lygi ${a+b}`);
+    return a + b;
+  };
+  this.subtraction = function () {
+    console.log(`Pateiktų skaičių sskirtumas lygus ${a-b}`);
+    return a - b;
+  };
+  this.multiplication = function () {
+    console.log(`Pateiktų skaičių sandauga lygi ${a*b}`);
+    return a * b;
+  };
+  this.division = function () {
+    console.log(`Pateiktų skaičių dalmuo lygus ${(a/b).toFixed(2)}`);
+    return (a / b).toFixed(2);
+  };
+
+  // ------------------------
+  // TEKSTAS Į HTML
+  // ------------------------
+
+  document.querySelector("body").innerText = `Pateiktų skaičių ${a} ir ${b} suma lygi ${sum()}, skirtumas 
+  lygus ${subtraction()}, sandauga lygi ${multiplication()}, dalmuo lygus ${division()}.`;
+}
+
+Calculator(10, 2);
