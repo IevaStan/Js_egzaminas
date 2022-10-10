@@ -12,7 +12,7 @@ Pastaba: Informacija apie user'į (jo kortelė) bei turi turėti bent minimalų 
 
 const ENDPOINT = "https://api.github.com/users";
 
-const makeRequest = () => {
+function makeRequest() {
   fetch(ENDPOINT)
     .then((response) => response.json())
     .then((data) => {
@@ -20,9 +20,9 @@ const makeRequest = () => {
     });
   document.getElementById("message").style.visibility = "hidden";
   document.getElementById("btn").style.visibility = "hidden";
-};
+}
 
-const showResults = (responseItems) => {
+function showResults(responseItems) {
   // console.table(responseItems);
   const output = document.getElementById("output");
   output.innerHTML = "";
@@ -36,7 +36,7 @@ const showResults = (responseItems) => {
     mainCard.appendChild(dataLogin);
 
     const avatarContainer = document.createElement("div");
-    avatarContainer.innerText = "Avatar url: ";
+    avatarContainer.innerText = "Full size avatar: ";
     const a = document.createElement("a");
     avatarContainer.appendChild(a);
     const link = document.createTextNode("click here to open in New Tab");
@@ -45,8 +45,13 @@ const showResults = (responseItems) => {
     a.target = "_blank";
     mainCard.appendChild(avatarContainer);
 
+    const avatar = document.createElement("img");
+    avatar.src = item.avatar_url;
+    avatar.style = "width: 100px";
+    mainCard.appendChild(avatar);
+
     output.appendChild(mainCard);
   });
-};
+}
 
 document.getElementById("btn").addEventListener("click", makeRequest);

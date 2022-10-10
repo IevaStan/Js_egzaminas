@@ -22,14 +22,14 @@ const users = [
 console.table(users);
 
 let dogOwners = users.filter(filterDogs);
-function filterDogs(users) {
-  return users.hasDog;
+function filterDogs(data) {
+  return data.hasDog;
 }
 console.table(dogOwners);
 
 let adultUsers = users.filter(filterAdults);
-function filterAdults(users) {
-  return users.age >= 18;
+function filterAdults(data) {
+  return data.age >= 18;
 }
 console.table(adultUsers);
 
